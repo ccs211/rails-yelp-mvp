@@ -1,0 +1,26 @@
+
+<div class="container">
+  <h1>All Restaurants</h1>
+<ul>
+
+  <div class="row">
+  <% @restaurants.each do |restaurant| %>
+    <div class="col-12 col-md-4 ">
+   <div class="card rest-card my-3">
+    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?restaurants" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= restaurant.name %></h5>
+      <p class="card-text"><i class="fas fa-map-signs"> <%= restaurant.address %></i></p>
+      <p class="card-text"><i class="fas fa-phone"> <%= restaurant.phone_number %></i></p>
+      <p class="card-text"><i class="fas fa-book"> <%= restaurant.category.capitalize %></i></p>
+      <%= link_to "Go to Restaurant", restaurant_path(restaurant), class: "btn btn-primary" %>
+    </div>
+  </div>
+  </div>
+  <% end %>
+</div>
+</ul>
+  <%= link_to "Create new Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+
+</div>
+
